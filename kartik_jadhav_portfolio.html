@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kartik Jadhav — UI/UX Designer</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--v50:#faf5ff;--v100:#f3e8ff;--v200:#e9d5ff;--v300:#d8b4fe;--v400:#c084fc;--v500:#a855f7;--v600:#9333ea;--v700:#7e22ce;--v800:#6b21a8;--v900:#4a1772;--bg:#faf5ff;--muted:#7c5aa0;--border:#e9d5ff;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:#2d1457;font-family:'Plus Jakarta Sans',sans-serif;overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.1rem 4rem;display:flex;justify-content:space-between;align-items:center;background:rgba(250,245,255,0.93);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);}
+.logo{font-family:'Playfair Display',serif;font-weight:900;font-size:1.4rem;background:linear-gradient(135deg,var(--v700),var(--v400));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.nav-links{display:flex;gap:2rem;list-style:none;}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:0.88rem;font-weight:500;transition:color 0.2s;}
+.nav-links a:hover{color:var(--v700);}
+.nav-cta{background:linear-gradient(135deg,var(--v700),var(--v500));color:#fff;padding:0.5rem 1.3rem;border-radius:100px;font-size:0.84rem;font-weight:600;text-decoration:none;box-shadow:0 4px 16px rgba(126,34,206,0.3);transition:opacity 0.2s,transform 0.2s;}
+.nav-cta:hover{opacity:0.88;transform:translateY(-1px);}
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:7rem 4rem 2rem;position:relative;overflow:hidden;background:linear-gradient(160deg,var(--v50) 0%,var(--v100) 60%,var(--v200) 100%);}
+.hero-tag{display:inline-flex;align-items:center;gap:0.5rem;background:#fff;border:1.5px solid var(--v300);border-radius:100px;padding:0.4rem 1.1rem;font-size:0.8rem;color:var(--muted);margin-bottom:1.6rem;width:fit-content;font-weight:500;}
+.hero-dot{width:7px;height:7px;border-radius:50%;background:var(--v500);animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.4;transform:scale(0.7);}}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(3.5rem,9vw,8rem);font-weight:900;line-height:0.95;letter-spacing:-0.02em;margin-bottom:1.4rem;}
+.hero h1 .line1{color:var(--v900);}
+.hero h1 .line2{background:linear-gradient(135deg,var(--v600),var(--v400));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.hero h1 .line3{color:var(--v500);font-style:italic;}
+.hero-sub{font-size:1.05rem;color:var(--muted);max-width:500px;line-height:1.75;margin-bottom:2rem;font-weight:300;}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:2rem;}
+.btn-primary{background:linear-gradient(135deg,var(--v700),var(--v500));color:#fff;padding:0.9rem 2.2rem;border-radius:100px;font-size:0.95rem;font-weight:600;text-decoration:none;transition:transform 0.2s,box-shadow 0.2s;display:inline-block;box-shadow:0 6px 28px rgba(126,34,206,0.35);}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 10px 36px rgba(126,34,206,0.45);}
+.btn-outline{border:2px solid var(--v500);color:var(--v700);padding:0.9rem 2.2rem;border-radius:100px;font-size:0.95rem;font-weight:600;text-decoration:none;transition:all 0.2s;display:inline-block;}
+.btn-outline:hover{background:var(--v500);color:#fff;transform:translateY(-2px);}
+.hero-contact-strip{display:flex;gap:1.5rem;flex-wrap:wrap;align-items:center;}
+.hero-contact-item{display:flex;align-items:center;gap:0.45rem;font-size:0.82rem;color:var(--muted);text-decoration:none;font-weight:500;transition:color 0.2s;}
+.hero-contact-item:hover{color:var(--v700);}
+.hero-orb1{position:absolute;top:-8%;right:-4%;width:550px;height:550px;border-radius:50%;background:radial-gradient(circle,rgba(192,132,252,0.2) 0%,transparent 68%);pointer-events:none;}
+.hero-orb2{position:absolute;bottom:-10%;left:-8%;width:450px;height:450px;border-radius:50%;background:radial-gradient(circle,rgba(168,85,247,0.12) 0%,transparent 68%);pointer-events:none;}
+.hero-orb3{position:absolute;top:30%;right:20%;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(233,213,255,0.6) 0%,transparent 70%);pointer-events:none;}
+section{padding:5rem 4rem;}
+.section-tag{font-size:0.72rem;letter-spacing:0.18em;color:var(--v500);text-transform:uppercase;margin-bottom:0.8rem;font-weight:600;}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3rem);font-weight:900;letter-spacing:-0.01em;margin-bottom:1rem;color:var(--v900);line-height:1.1;}
+.section-sub{color:var(--muted);font-size:0.97rem;line-height:1.75;max-width:560px;font-weight:300;}
+.divider{width:100%;height:1px;background:linear-gradient(90deg,transparent,var(--v200),transparent);}
+.about{background:linear-gradient(180deg,var(--v50),#fff);}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;margin-top:3rem;align-items:start;}
+.about-text p{color:var(--muted);line-height:1.85;margin-bottom:1.2rem;font-weight:300;font-size:0.95rem;}
+.about-text p strong{color:var(--v800);font-weight:600;}
+.about-stats{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.stat-card{background:linear-gradient(135deg,#fff,var(--v50));border:1.5px solid var(--v200);border-radius:18px;padding:1.6rem;transition:all 0.3s;position:relative;overflow:hidden;}
+.stat-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--v400),var(--v600));opacity:0;transition:opacity 0.3s;}
+.stat-card:hover{border-color:var(--v400);transform:translateY(-5px);box-shadow:0 12px 36px rgba(126,34,206,0.12);}
+.stat-card:hover::before{opacity:1;}
+.stat-num{font-family:'Playfair Display',serif;font-size:2.8rem;font-weight:900;background:linear-gradient(135deg,var(--v700),var(--v400));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;}
+.stat-label{color:var(--muted);font-size:0.78rem;margin-top:0.4rem;}
+.skills-section{background:#fff;}
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;margin-top:3rem;}
+.skill-card{background:linear-gradient(135deg,var(--v50),#fff);border:1.5px solid var(--v200);border-radius:18px;padding:1.6rem;transition:all 0.3s;position:relative;overflow:hidden;}
+.skill-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--v300),var(--v600));transform:scaleX(0);transition:transform 0.3s;transform-origin:left;}
+.skill-card:hover{border-color:var(--v400);transform:translateY(-5px);box-shadow:0 12px 36px rgba(126,34,206,0.1);}
+.skill-card:hover::after{transform:scaleX(1);}
+.skill-icon{font-size:1.6rem;margin-bottom:1rem;}
+.skill-card h4{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;margin-bottom:1rem;color:var(--v800);}
+.skill-tags{display:flex;flex-wrap:wrap;gap:0.4rem;}
+.tag{background:var(--v100);border:1px solid var(--v200);border-radius:100px;padding:0.25rem 0.75rem;font-size:0.73rem;color:var(--v700);font-weight:500;}
+.projects-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:3rem;}
+.project-card{background:#fff;border:1.5px solid var(--v200);border-radius:22px;overflow:hidden;transition:all 0.3s;cursor:pointer;}
+.project-card:hover{transform:translateY(-7px);border-color:var(--v500);box-shadow:0 16px 48px rgba(126,34,206,0.18);}
+.project-thumb{height:200px;display:flex;align-items:center;justify-content:center;font-size:4rem;}
+.project-thumb.furniture{background:linear-gradient(135deg,var(--v100),var(--v200),var(--v300));}
+.project-thumb.eco{background:linear-gradient(135deg,var(--v200),var(--v300),var(--v400));}
+.project-info{padding:1.5rem;}
+.project-type{font-size:0.7rem;letter-spacing:0.14em;color:var(--v500);text-transform:uppercase;margin-bottom:0.5rem;font-weight:600;}
+.project-info h3{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;margin-bottom:0.5rem;color:var(--v900);}
+.project-info p{color:var(--muted);font-size:0.85rem;line-height:1.6;font-weight:300;}
+.project-footer{display:flex;justify-content:space-between;align-items:center;margin-top:1rem;}
+.project-tools{display:flex;gap:0.4rem;flex-wrap:wrap;}
+.proj-tool{background:var(--v100);border-radius:100px;padding:0.2rem 0.65rem;font-size:0.71rem;color:var(--v700);font-weight:500;}
+.proj-arrow{color:var(--v600);font-size:0.82rem;font-weight:700;}
+.academic{background:linear-gradient(180deg,var(--v50),#fff);}
+.academic-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:3rem;}
+.acad-card{background:#fff;border:1.5px solid var(--v200);border-radius:22px;padding:2rem;transition:all 0.3s;position:relative;overflow:hidden;}
+.acad-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;background:linear-gradient(180deg,var(--v300),var(--v600));opacity:0;transition:opacity 0.3s;}
+.acad-card:hover{border-color:var(--v400);transform:translateY(-5px);box-shadow:0 12px 36px rgba(126,34,206,0.1);}
+.acad-card:hover::before{opacity:1;}
+.acad-icon{width:50px;height:50px;border-radius:14px;background:linear-gradient(135deg,var(--v100),var(--v200));display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:1.2rem;}
+.acad-card h3{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;margin-bottom:0.8rem;line-height:1.3;color:var(--v900);}
+.acad-card p{color:var(--muted);font-size:0.85rem;line-height:1.75;font-weight:300;}
+.acad-org{font-size:0.74rem;color:var(--v600);margin-top:1rem;font-weight:600;}
+.edu-section{background:#fff;}
+.edu-timeline{margin-top:3rem;position:relative;padding-left:2.5rem;}
+.edu-timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:linear-gradient(180deg,var(--v300),var(--v600),var(--v400));}
+.edu-item{position:relative;margin-bottom:3rem;padding-left:2rem;}
+.edu-dot{position:absolute;left:-2.65rem;top:0.35rem;width:13px;height:13px;border-radius:50%;background:linear-gradient(135deg,var(--v500),var(--v700));border:3px solid var(--bg);}
+.edu-year{font-size:0.74rem;color:var(--v500);letter-spacing:0.12em;margin-bottom:0.5rem;font-weight:600;}
+.edu-item h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;margin-bottom:0.3rem;color:var(--v900);}
+.edu-item .edu-inst{color:var(--muted);font-size:0.87rem;}
+.edu-grade{display:inline-block;background:linear-gradient(135deg,var(--v100),var(--v200));border:1.5px solid var(--v300);border-radius:100px;padding:0.25rem 0.9rem;font-size:0.77rem;color:var(--v700);margin-top:0.5rem;font-weight:600;}
+.cert-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin-top:3rem;}
+.cert-card{background:#fff;border:1.5px solid var(--v200);border-radius:18px;padding:1.6rem;display:flex;gap:1rem;align-items:flex-start;transition:all 0.3s;}
+.cert-card:hover{border-color:var(--v500);transform:translateY(-4px);box-shadow:0 10px 30px rgba(126,34,206,0.1);}
+.cert-badge{width:46px;height:46px;border-radius:14px;background:linear-gradient(135deg,var(--v100),var(--v200));display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;}
+.cert-info h4{font-family:'Playfair Display',serif;font-size:0.95rem;font-weight:700;margin-bottom:0.3rem;color:var(--v900);}
+.cert-info p{color:var(--muted);font-size:0.79rem;line-height:1.55;font-weight:300;}
+.cert-status{display:inline-block;margin-top:0.5rem;font-size:0.71rem;padding:0.25rem 0.75rem;border-radius:100px;font-weight:600;}
+.cert-status.ongoing{background:var(--v100);color:var(--v700);}
+.cert-status.done{background:var(--v200);color:var(--v800);}
+.testi-section{background:linear-gradient(135deg,var(--v900),var(--v800),var(--v700));}
+.testi-section .section-tag{color:var(--v300);}
+.testi-section .section-title{color:#fff;}
+.testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin-top:3rem;}
+.testi-card{background:rgba(255,255,255,0.08);border:1.5px solid rgba(255,255,255,0.15);border-radius:22px;padding:2rem;transition:all 0.3s;backdrop-filter:blur(8px);}
+.testi-card:hover{background:rgba(255,255,255,0.13);border-color:var(--v300);transform:translateY(-5px);}
+.testi-quote{font-family:'Playfair Display',serif;font-size:3rem;color:var(--v300);line-height:1;margin-bottom:1rem;}
+.testi-text{color:rgba(255,255,255,0.75);font-size:0.88rem;line-height:1.75;font-style:italic;font-weight:300;margin-bottom:1.5rem;}
+.testi-author{display:flex;align-items:center;gap:0.8rem;}
+.testi-avatar{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;}
+.testi-name{font-size:0.88rem;font-weight:600;color:#fff;}
+.testi-role{font-size:0.73rem;color:var(--v300);}
+.contact-section{background:linear-gradient(135deg,var(--v100),var(--v200),var(--v300));}
+.contact-inner{max-width:640px;margin:0 auto;text-align:center;}
+.contact-section .section-tag{color:var(--v700);}
+.contact-section .section-title{color:var(--v900);}
+.contact-section .section-sub{color:var(--v700);margin:0 auto 2.5rem;}
+.contact-links{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
+.contact-link{display:flex;align-items:center;gap:0.6rem;background:#fff;border:1.5px solid var(--v300);border-radius:100px;padding:0.75rem 1.5rem;color:var(--v800);text-decoration:none;font-size:0.87rem;font-weight:600;transition:all 0.3s;box-shadow:0 4px 14px rgba(126,34,206,0.1);}
+.contact-link:hover{background:var(--v700);color:#fff;border-color:var(--v700);transform:translateY(-2px);box-shadow:0 8px 24px rgba(126,34,206,0.3);}
+footer{padding:2rem 4rem;border-top:1px solid var(--v200);display:flex;justify-content:space-between;align-items:center;background:var(--v900);}
+footer p{color:var(--v400);font-size:0.79rem;}
+.footer-logo{font-family:'Playfair Display',serif;font-weight:900;background:linear-gradient(135deg,var(--v300),var(--v400));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-size:1.2rem;}
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(74,23,114,0.55);z-index:200;align-items:center;justify-content:center;padding:2rem;backdrop-filter:blur(6px);}
+.modal-overlay.active{display:flex;}
+.modal{background:#fff;border:1.5px solid var(--v200);border-radius:26px;max-width:600px;width:100%;max-height:80vh;overflow-y:auto;padding:2.5rem;position:relative;}
+.modal-close{position:absolute;top:1.2rem;right:1.2rem;background:var(--v100);border:1px solid var(--v200);border-radius:50%;width:34px;height:34px;display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--muted);font-size:1.1rem;transition:all 0.2s;}
+.modal-close:hover{color:var(--v700);background:var(--v200);}
+.modal h2{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:900;margin-bottom:0.4rem;color:var(--v900);}
+.modal-type{font-size:0.73rem;letter-spacing:0.12em;color:var(--v500);text-transform:uppercase;margin-bottom:1.3rem;font-weight:600;}
+.modal ul{list-style:none;padding:0;}
+.modal ul li{color:var(--muted);font-size:0.87rem;line-height:1.75;padding:0.6rem 0;border-bottom:1px solid var(--v100);font-weight:300;}
+.modal ul li:last-child{border-bottom:none;}
+.modal ul li::before{content:'→ ';color:var(--v500);font-weight:700;}
+.fade-in{opacity:0;transform:translateY(28px);transition:opacity 0.7s ease,transform 0.7s ease;}
+.fade-in.visible{opacity:1;transform:translateY(0);}
+</style>
+</head>
+<body>
+<nav>
+  <div class="logo">KJ.</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li><li><a href="#skills">Skills</a></li><li><a href="#projects">Projects</a></li><li><a href="#education">Education</a></li><li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="mailto:kartik0804jadhav@gmail.com" class="nav-cta">Hire Me</a>
+</nav>
+<section class="hero" id="home">
+  <div class="hero-orb1"></div><div class="hero-orb2"></div><div class="hero-orb3"></div>
+  <div class="hero-tag"><span class="hero-dot"></span> Open to UI/UX Opportunities · Bengaluru</div>
+  <h1><span class="line1">Kartik</span><br><span class="line2">Jadhav</span><br><span class="line3">Designer.</span></h1>
+  <p class="hero-sub">Mechanical Engineer turned UI/UX Designer. I bring systems thinking to human-centred design — turning complex problems into clean, intuitive experiences.</p>
+  <div class="hero-btns"><a href="#projects" class="btn-primary">View My Work</a><a href="#contact" class="btn-outline">Let's Connect</a></div>
+  <div class="hero-contact-strip">
+    <a href="mailto:kartik0804jadhav@gmail.com" class="hero-contact-item"><span>✉️</span> kartik0804jadhav@gmail.com</a>
+    <a href="tel:+918317361212" class="hero-contact-item"><span>📞</span> +91 8317361212</a>
+    <a href="https://www.linkedin.com/in/kartik-v-jadhav" target="_blank" class="hero-contact-item"><span>💼</span> linkedin.com/in/kartik-v-jadhav</a>
+  </div>
+</section>
+<div class="divider"></div>
+<section class="about" id="about">
+  <div class="section-tag">About Me</div>
+  <div class="section-title fade-in">Engineer by training,<br>Designer by passion.</div>
+  <div class="about-grid">
+    <div class="about-text fade-in">
+      <p>I am <strong>Kartik Jadhav</strong>, a Mechanical Engineering graduate from KS Institute of Technology, Bengaluru (CGPA: 7.98). My engineering background gave me a disciplined, systems-level way of thinking — and UI/UX design gave me the direction I actually care about.</p>
+      <p>I have been building my design skills through <strong>self-initiated projects</strong> — wireframes, high-fidelity UI, design systems — and I'm ready to take that into a professional setting. I bring <strong>focus, adaptability, and a genuine desire to do good work.</strong></p>
+      <p>Based in <strong>Bengaluru, India</strong>, I'm actively seeking entry-level UI/UX and User Research roles where I can grow fast and contribute meaningfully from day one.</p>
+    </div>
+    <div class="about-stats fade-in">
+      <div class="stat-card"><div class="stat-num">2+</div><div class="stat-label">Design Projects Completed</div></div>
+      <div class="stat-card"><div class="stat-num">7.98</div><div class="stat-label">BE CGPA / 10</div></div>
+      <div class="stat-card"><div class="stat-num">5+</div><div class="stat-label">Design Tools Mastered</div></div>
+      <div class="stat-card"><div class="stat-num">2</div><div class="stat-label">Academic Research Projects</div></div>
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+<section class="skills-section" id="skills">
+  <div class="section-tag">What I Bring</div>
+  <div class="section-title fade-in">Skills & Tools</div>
+  <p class="section-sub fade-in">A diverse toolkit built across design, data, and front-end — shaped by curiosity and hands-on practice.</p>
+  <div class="skills-grid">
+    <div class="skill-card fade-in"><div class="skill-icon">🎨</div><h4>Design Tools</h4><div class="skill-tags"><span class="tag">Figma</span><span class="tag">Adobe XD</span><span class="tag">Miro</span><span class="tag">FigJam</span><span class="tag">Illustrator</span><span class="tag">Photoshop</span></div></div>
+    <div class="skill-card fade-in"><div class="skill-icon">🧠</div><h4>UX Competencies</h4><div class="skill-tags"><span class="tag">Wireframing</span><span class="tag">Prototyping</span><span class="tag">Hi-Fi UI</span><span class="tag">Design Systems</span><span class="tag">User Research</span><span class="tag">Usability Testing</span><span class="tag">IA</span></div></div>
+    <div class="skill-card fade-in"><div class="skill-icon">🤖</div><h4>AI & Emerging</h4><div class="skill-tags"><span class="tag">AI-Enhanced Design</span><span class="tag">Relume</span><span class="tag">Prompt-Based Design</span></div></div>
+    <div class="skill-card fade-in"><div class="skill-icon">💻</div><h4>Front-End Basics</h4><div class="skill-tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">Python</span></div></div>
+    <div class="skill-card fade-in"><div class="skill-icon">📊</div><h4>Data & Analytics</h4><div class="skill-tags"><span class="tag">SQL (MySQL)</span><span class="tag">MS Excel</span><span class="tag">Tableau</span><span class="tag">Power BI</span></div></div>
+    <div class="skill-card fade-in"><div class="skill-icon">🤝</div><h4>Soft Skills</h4><div class="skill-tags"><span class="tag">Communication</span><span class="tag">Adaptability</span><span class="tag">Problem-Solving</span><span class="tag">Teamwork</span><span class="tag">Attention to Detail</span></div></div>
+  </div>
+</section>
+<div class="divider"></div>
+<section id="projects">
+  <div class="section-tag">Portfolio</div>
+  <div class="section-title fade-in">UI/UX Projects</div>
+  <p class="section-sub fade-in">Self-initiated projects demonstrating end-to-end design thinking — from wireframes to polished, handoff-ready prototypes.</p>
+  <div class="projects-grid">
+    <div class="project-card fade-in" onclick="openModal('furniture')"><div class="project-thumb furniture">🛋️</div><div class="project-info"><div class="project-type">E-Commerce · Landing Page</div><h3>Furniture E-Commerce Landing Page</h3><p>Full-scale wireframe covering 9 complete sections with conversion-focused layout and annotated design-to-dev documentation.</p><div class="project-footer"><div class="project-tools"><span class="proj-tool">Figma</span><span class="proj-tool">Wireframing</span><span class="proj-tool">UX Research</span></div><span class="proj-arrow">View →</span></div></div></div>
+    <div class="project-card fade-in" onclick="openModal('eco')"><div class="project-thumb eco">🌿</div><div class="project-info"><div class="project-type">Mobile App · Sustainability</div><h3>EcoTrack — Sustainability Tracking App</h3><p>High-fidelity mobile UI with dark/light mode theming using Figma variables and complete handoff-ready prototype documentation.</p><div class="project-footer"><div class="project-tools"><span class="proj-tool">Figma</span><span class="proj-tool">Auto Layout</span><span class="proj-tool">Design System</span></div><span class="proj-arrow">View →</span></div></div></div>
+  </div>
+</section>
+<div class="divider"></div>
+<section class="academic" id="academic">
+  <div class="section-tag">Engineering Work</div>
+  <div class="section-title fade-in">Academic Projects</div>
+  <div class="academic-grid">
+    <div class="acad-card fade-in"><div class="acad-icon">🔥</div><h3>360° Rotating Fire Protection System</h3><p>Designed and fabricated a prototype integrating full-coverage suppression and thermal detection using SolidWorks. Optimised sensor placement and nozzle angles for reliable detection across all scenarios.</p><div class="acad-org">KS Institute of Technology · 2024–2025</div></div>
+    <div class="acad-card fade-in"><div class="acad-icon">☀️</div><h3>Enhanced Solar Panel Glasses — Anti-Reflective Coating</h3><p>Synthesised ZnO and TiO₂ anti-reflective coatings to improve solar panel light absorption. Quantified measurable improvement in panel performance across multiple environmental conditions.</p><div class="acad-org">KS Institute of Technology / CIIRC · 2023–2024</div></div>
+  </div>
+</section>
+<div class="divider"></div>
+<section class="edu-section" id="education">
+  <div class="section-tag">Education</div>
+  <div class="section-title fade-in">Academic Background</div>
+  <div class="edu-timeline">
+    <div class="edu-item fade-in"><div class="edu-dot"></div><div class="edu-year">2021 – 2025</div><h3>Bachelor of Engineering — Mechanical Engineering</h3><div class="edu-inst">KS Institute of Technology, Bengaluru</div><span class="edu-grade">CGPA: 7.98 / 10</span></div>
+    <div class="edu-item fade-in"><div class="edu-dot"></div><div class="edu-year">Completed</div><h3>Diploma — Mechanical Engineering</h3><div class="edu-inst">VET BVL Polytechnic, Bengaluru</div><span class="edu-grade">Aggregate: 73.92%</span></div>
+  </div>
+</section>
+<div class="divider"></div>
+<section id="certifications">
+  <div class="section-tag">Learning</div>
+  <div class="section-title fade-in">Certifications</div>
+  <div class="cert-grid">
+    <div class="cert-card fade-in"><div class="cert-badge">🎓</div><div class="cert-info"><h4>UI/UX Design with AI, Figma & Miro</h4><p>Live projects in Figma, Miro, FigJam, and AI-enhanced design workflows including prompt-based design.</p><span class="cert-status ongoing">Ongoing · Grow AI</span></div></div>
+    <div class="cert-card fade-in"><div class="cert-badge">📊</div><div class="cert-info"><h4>SQL, Tableau, Power BI & Excel</h4><p>Completed live projects including dashboards and data analysis pipelines using core data science tools.</p><span class="cert-status done">Completed · Udemy</span></div></div>
+  </div>
+</section>
+<div class="divider"></div>
+<section class="testi-section" id="testimonials">
+  <div class="section-tag">Kind Words</div>
+  <div class="section-title fade-in">Testimonials</div>
+  <div class="testi-grid">
+    <div class="testi-card fade-in"><div class="testi-quote">"</div><p class="testi-text">Kartik has a rare ability to combine structured engineering logic with genuine design sensibility. His wireframes are always well thought out and his attention to user flow is impressive.</p><div class="testi-author"><div class="testi-avatar" style="background:rgba(216,180,254,0.2);color:#d8b4fe;">AP</div><div><div class="testi-name">Aditya Prasad</div><div class="testi-role">Senior Designer, Peer Mentor</div></div></div></div>
+    <div class="testi-card fade-in"><div class="testi-quote">"</div><p class="testi-text">What stands out about Kartik is his adaptability. He picks up new tools fast, asks the right questions, and is always thinking about the user. He'll be a strong addition to any design team.</p><div class="testi-author"><div class="testi-avatar" style="background:rgba(216,180,254,0.2);color:#c084fc;">RK</div><div><div class="testi-name">Ravi Kumar</div><div class="testi-role">Academic Mentor, KSIT</div></div></div></div>
+    <div class="testi-card fade-in"><div class="testi-quote">"</div><p class="testi-text">Kartik consistently delivered clean, annotated design documentation. His EcoTrack project showed a strong grasp of design systems and component thinking.</p><div class="testi-author"><div class="testi-avatar" style="background:rgba(216,180,254,0.2);color:#e9d5ff;">SM</div><div><div class="testi-name">Sneha M.</div><div class="testi-role">UI/UX Instructor, Grow AI</div></div></div></div>
+  </div>
+</section>
+<div class="divider"></div>
+<section class="contact-section" id="contact">
+  <div class="contact-inner">
+    <div class="section-tag">Get In Touch</div>
+    <div class="section-title fade-in">Let's Build Something Together</div>
+    <p class="section-sub fade-in">Actively seeking UI/UX and User Research opportunities in Bengaluru. If you think I'd be a good fit, I'd love to hear from you.</p>
+    <div class="contact-links">
+      <a href="mailto:kartik0804jadhav@gmail.com" class="contact-link"><span>✉️</span> kartik0804jadhav@gmail.com</a>
+      <a href="https://www.linkedin.com/in/kartik-v-jadhav" class="contact-link" target="_blank"><span>💼</span> LinkedIn Profile</a>
+      <a href="tel:+918317361212" class="contact-link"><span>📞</span> +91 8317361212</a>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="footer-logo">KJ.</div>
+  <p>© 2025 Kartik Jadhav · Bengaluru, India</p>
+  <p style="color:#7c5aa0;font-size:0.74rem;">Designed with ♥ & Figma thinking</p>
+</footer>
+<div class="modal-overlay" id="modal-furniture" onclick="closeModal(event)"><div class="modal"><button class="modal-close" onclick="closeModalById('modal-furniture')">×</button><div class="modal-type">E-Commerce · UI/UX Design</div><h2>Furniture E-Commerce Landing Page</h2><ul><li>Designed a full-scale wireframe covering 9 complete sections from hero banner to newsletter signup</li><li>Structured a category grid, product cards, lifestyle banner, and testimonials for a conversion-focused layout</li><li>Applied UX best practices including trust signal placement and clear CTA hierarchy</li><li>Delivered fully annotated wireframes with component intent and interaction flow documentation</li><li>100% of sections documented for seamless design-to-dev handoff</li></ul></div></div>
+<div class="modal-overlay" id="modal-eco" onclick="closeModal(event)"><div class="modal"><button class="modal-close" onclick="closeModalById('modal-eco')">×</button><div class="modal-type">Mobile App · Sustainability</div><h2>EcoTrack — Sustainability Tracking App</h2><ul><li>Transformed wireframes into polished high-fidelity mobile UI using Figma Auto Layout 5.0, variables, and interactive components</li><li>Implemented dark/light mode theming — 2 complete visual modes within a single design file</li><li>Built a structured Team Library managing global design tokens: typography, colour palettes, and iconography</li><li>Reduced design inconsistencies through systematic component management</li><li>Produced complete design-to-dev documentation — fully handoff-ready prototype</li></ul></div></div>
+<script>
+function openModal(id){document.getElementById('modal-'+id).classList.add('active');}
+function closeModalById(id){document.getElementById(id).classList.remove('active');}
+function closeModal(e){if(e.target.classList.contains('modal-overlay'))e.target.classList.remove('active');}
+const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.1});
+document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));
+document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{e.preventDefault();const t=document.querySelector(a.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth'});});});
+</script>
+</body>
+</html>
